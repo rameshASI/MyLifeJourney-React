@@ -9,7 +9,8 @@ const style = StyleSheet.create({
   container : {
     flex: 1,
     justifyContent: 'space-between',
-    alignItems: 'center'
+    alignItems: 'center',
+    backgroundColor: 'rgba(241, 241, 241, 1.0)'
   },
   loginButton: {
     width: '100%',
@@ -34,7 +35,7 @@ const style = StyleSheet.create({
   registerText: {
     marginTop: 40,
     alignItems: 'center'
-  }
+  },
 })
 class LoginScreen extends Component {
 
@@ -137,12 +138,15 @@ class LoginScreen extends Component {
   }
 
   forgotPasswordHandler = () => {
-
+    console.log('Forgot password screen handler')
+    this.props.navigation.push('ForgotPasswordScreen')
   }
 
   registerButtonHandler = () => {
-
+    console.log('Register button handler')
+    this.props.navigation.navigate('RegisterScreen')
   }
+
   render() {
     let { errors = {}, secureTextEntry, ...data } = this.state;
 
